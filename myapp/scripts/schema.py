@@ -3,9 +3,9 @@ import sys
 from sqlalchemy.schema import CreateIndex
 from sqlalchemy.schema import CreateTable
 
-import myapp
-from myapp import database
-from myapp.models import Base
+from .. import get_app
+from .. import database
+from .. models import Base
 
 def createdatabase(app):
     metadata = Base.metadata
@@ -41,7 +41,7 @@ def main():
     s_parser = subparsers.add_parser('database')
     s_parser.set_defaults(command='database')
 
-    app = myapp.get_app()
+    app = get_app()
     args = parser.parse_args()
     if args.command == 'sql':
         createsql(app, args.out)

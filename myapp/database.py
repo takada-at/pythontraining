@@ -10,8 +10,8 @@ def get_local_db_conf():
         return f.readline().rstrip()
 
 def get_database(app):
-    PUBLIC_MYSQL_URI = 'mysql://{}@localhost/{}?charset=utf8'
-    DATABASE = PUBLIC_MYSQL_URI.format(get_local_db_conf())
-    #DATABASE = 'sqlite:///myapp.db'
+    #PUBLIC_MYSQL_URI = 'mysql://{}:{}@localhost/myapp?charset=utf8'
+    #DATABASE = PUBLIC_MYSQL_URI.format(get_local_db_conf())
+    DATABASE = 'sqlite:///myapp.db'
     engine = create_engine(DATABASE, pool_recycle=3600)
     return engine

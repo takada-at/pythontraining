@@ -3,7 +3,7 @@ python 練習用のWebアプリケーションテンプレートです。
 
 ### 1. Create Database Auth File
 ```bash
-$ echo "user:database" > .myapp/dbauth
+$ echo "user:password" > .myapp/dbauth
 ```
 
 ### 2. Install Libraries
@@ -20,6 +20,8 @@ $ python scripts/schema.py database
 ```bash
 $ python scripts/run.py
 ```
+
+ ブラウザでhttp://localhost:5000 を開く
 
 ## DEVELOP
 ### サブパッケージの紹介

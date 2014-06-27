@@ -1,5 +1,5 @@
 from flask import Flask
-from myapp.modules import hello
+from .modules import hello
 class Config:
     ENV = 'local'
     DEBUG = True
