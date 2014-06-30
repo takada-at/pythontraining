@@ -14,7 +14,7 @@ $ echo "bbs:password" > ./bbs/dbauth
 
 ### 2. Install Libraries
 ```bash
-$ pip -r requirements.txt
+$ pip install -r requirements.txt
 ```
 
 ### 3. Create Tables
