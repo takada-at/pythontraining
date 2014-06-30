@@ -7,11 +7,11 @@ def get_local_db_conf():
     if not os.path.exists(local_dbauth_path):
         return
     with open(os.path.join(path, 'dbauth')) as f:
-        return f.readline().rstrip()
+        return f.readline().rstrip().split(':')
 
 def get_database(app):
-    PUBLIC_MYSQL_URI = 'mysql://{}:{}@localhost/bbs?charset=utf8'
-    DATABASE = PUBLIC_MYSQL_URI.format(get_local_db_conf())
+    PUBLIC_MYSQL_URI = 'mysql+pymysql://{}:{}@localhost/bbs?charset=utf8'
+    DATABASE = PUBLIC_MYSQL_URI.format(*get_local_db_conf())
     #DATABASE = 'sqlite:///myapp.db'
     engine = create_engine(DATABASE, pool_recycle=3600)
     return engine
