@@ -5,6 +5,10 @@ class Sample(Base):
     __tablename__ = 'sample'
 
     id = Column(Integer, primary_key=True)
-    col0 = Column(String(100), unique=True)
-    col1 = Column(DateTime)
-    col2 = Column(Integer, default=1)
+    key = Column(String(100), unique=True)
+    timestamp = Column(DateTime)
+    status = Column(Integer, default=1)
+    def __init__(self, key, timestamp, status):
+        self.key = key
+        self.timestamp = timestamp
+        self.status = status

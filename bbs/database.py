@@ -1,5 +1,7 @@
 import os
 from sqlalchemy import create_engine
+from sqlalchemy.orm import scoped_session
+from sqlalchemy.orm import sessionmaker
 
 def get_local_db_conf():
     path = os.path.dirname(os.path.abspath(__file__))
@@ -15,3 +17,9 @@ def get_database(app):
     #DATABASE = 'sqlite:///myapp.db'
     engine = create_engine(DATABASE, pool_recycle=3600)
     return engine
+
+def create_session(db):
+    session = scoped_session(sessionmaker(bind=db))
+    return session
+
+
