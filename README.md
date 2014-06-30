@@ -3,8 +3,8 @@ python 練習用のWebアプリケーションテンプレートです。
 
 ### 1. Create Database Auth File
 ```sql
-CREATE TABLE bbs DEFAULT character set=utf8;
-GRANT ALL ON bbs.* TO bbs IDENTIFIED BY 'PASSWORD';
+CREATE DATABASE bbs DEFAULT character set=utf8;
+GRANT ALL ON bbs.* TO bbs IDENTIFIED BY PASSWORD('password');
 FLUSH PRIVILEGES;
 ```
 
