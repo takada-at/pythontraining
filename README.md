@@ -2,8 +2,14 @@
 python 練習用のWebアプリケーションテンプレートです。
 
 ### 1. Create Database Auth File
+```sql
+CREATE TABLE bbs DEFAULT character set=utf8;
+GRANT ALL ON bbs.* TO bbs IDENTIFIED BY 'PASSWORD';
+FLUSH PRIVILEGES;
+```
+
 ```bash
-$ echo "user:password" > .myapp/dbauth
+$ echo "bbs:password" > ./bbs/dbauth
 ```
 
 ### 2. Install Libraries
