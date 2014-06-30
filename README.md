@@ -5,7 +5,6 @@ python 練習用のWebアプリケーションテンプレートです。
 ```sql
 CREATE DATABASE bbs DEFAULT character set=utf8;
 GRANT ALL ON bbs.* TO bbs IDENTIFIED BY PASSWORD('password');
-FLUSH PRIVILEGES;
 ```
 
 ```bash
